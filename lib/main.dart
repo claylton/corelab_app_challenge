@@ -1,4 +1,5 @@
 import 'package:corelab_app_challenge/ui/pages/tabs_page.dart';
+import 'package:corelab_app_challenge/ui/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,10 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
+        theme: AppTheme.theme,
         home: const DefaultTabController(
           length: 5,
           child: TabsPage(),
