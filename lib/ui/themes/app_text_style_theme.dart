@@ -45,4 +45,10 @@ abstract class AppTextStyleTheme {
     fontSize: 12,
     fontFamily: 'DMSans-Medium',
   );
+
+  static const TextStyle categoryTitle = TextStyle(
+    color: AppColorsTheme.primaryColor,
+    fontSize: 20,
+    fontFamily: 'DMSans-Regular',
+  );
 }

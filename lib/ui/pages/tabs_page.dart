@@ -1,3 +1,4 @@
+import 'package:corelab_app_challenge/ui/pages/category_page.dart';
 import 'package:corelab_app_challenge/ui/pages/home_page.dart';
 import 'package:corelab_app_challenge/ui/shared/widgets/app_icon_widget.dart';
 import 'package:corelab_app_challenge/ui/themes/app_colors_theme.dart';
@@ -40,7 +41,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
         controller: _tabController,
         children: [
           const HomePage(),
-          Container(color: Colors.blue),
+          CategoryPage(),
           Container(color: AppColorsTheme.primaryColor),
           Container(color: Colors.amber),
           Container(color: Colors.black),
