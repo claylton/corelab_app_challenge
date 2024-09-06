@@ -14,7 +14,6 @@ class AppProductListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 410,
       child: LoaderWidget(
         object: products,
         callback: list,
@@ -24,8 +23,10 @@ class AppProductListWidget extends StatelessWidget {
 
   Widget list() {
     return ListView.builder(
+      physics: const NeverScrollableScrollPhysics(),
       scrollDirection: Axis.vertical,
       itemCount: products?.length,
+      shrinkWrap: true,
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.all(5),

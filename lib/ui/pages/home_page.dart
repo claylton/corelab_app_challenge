@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppBarWidget(),
       body: ListView(
-        physics: const BouncingScrollPhysics(),
+        physics: const AlwaysScrollableScrollPhysics(),
         children: [
           const Padding(
             padding: EdgeInsets.only(left: 20, top: 24),
@@ -39,7 +39,19 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          AppProductListWidget(products: bloc.products)
+          AppProductListWidget(products: bloc.todayProducts),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+            child: Text(
+              'Ontem',
+              style: TextStyle(
+                fontFamily: 'DMSans-Medium',
+                fontSize: 14,
+                color: AppColorsTheme.greyColor,
+              ),
+            ),
+          ),
+          AppProductListWidget(products: bloc.yesterdayProducts),
         ],
       ),
     );

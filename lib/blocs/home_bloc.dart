@@ -6,11 +6,32 @@ class HomeBloc extends ChangeNotifier {
   final ProductRepository productRepository = ProductRepository();
 
   List<ProductItemModel>? products;
+  List<ProductItemModel>? todayProducts;
+  List<ProductItemModel>? yesterdayProducts;
 
   HomeBloc() {
-    getProducts;
+    getAllProducts;
+    getAllTodayProducts();
+    getAllYesterdayProducts();
   }
 
-  get getProducts => productRepository.getAll.then((data) => products = data).then((_) => notifyListeners());
+  get getAllProducts => productRepository.getAll.then((data) => products = data).then((_) => notifyListeners());
 
+  getAllTodayProducts() {
+    productRepository.getAll.then((data) {
+      todayProducts = data.where((item) {
+        return item.createdAt.day == DateTime.now().day;
+      }).toList();
+      notifyListeners();
+    });
+  }
+
+  getAllYesterdayProducts() {
+    productRepository.getAll.then((data) {
+      yesterdayProducts = data.where((item) {
+        return item.createdAt.day == (DateTime.now().subtract(const Duration(days: 1))).day;
+      }).toList();
+      notifyListeners();
+    });
+  }
 }
