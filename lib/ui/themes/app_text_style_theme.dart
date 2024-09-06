@@ -31,13 +31,13 @@ abstract class AppTextStyleTheme {
   static const TextStyle priceTextStyle = TextStyle(
     color: AppColorsTheme.blackColor,
     fontSize: 20,
-    fontFamily: 'DMSans-Bold',
+    fontFamily: 'DMSans-Medium',
   );
 
   static const TextStyle descriptionTextStyle = TextStyle(
     color: AppColorsTheme.primaryColor,
     fontSize: 14,
-    fontFamily: 'DMSans-Medium',
+    fontFamily: 'DMSans-Light',
   );
 
   static const TextStyle itemStateTextStyle = TextStyle(
