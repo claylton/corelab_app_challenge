@@ -28,30 +28,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-            child: Text(
-              'Hoje',
-              style: TextStyle(
-                fontFamily: 'DMSans-Medium',
-                fontSize: 14,
-                color: AppColorsTheme.greyColor,
-              ),
-            ),
-          ),
-          AppProductListWidget(products: bloc.todayProducts),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-            child: Text(
-              'Ontem',
-              style: TextStyle(
-                fontFamily: 'DMSans-Medium',
-                fontSize: 14,
-                color: AppColorsTheme.greyColor,
-              ),
-            ),
-          ),
-          AppProductListWidget(products: bloc.yesterdayProducts),
+          AppProductListWidget(products: bloc.products),
         ],
       ),
     );

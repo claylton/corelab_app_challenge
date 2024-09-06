@@ -2,7 +2,7 @@ import 'package:corelab_app_challenge/ui/pages/home_page.dart';
 import 'package:corelab_app_challenge/ui/shared/widgets/app_icon_widget.dart';
 import 'package:corelab_app_challenge/ui/themes/app_colors_theme.dart';
 import 'package:corelab_app_challenge/ui/themes/app_text_style_theme.dart';
-import 'package:corelab_app_challenge/ui/utils/data/app_icon_data.dart';
+import 'package:corelab_app_challenge/ui/utils/data/app_icon_data_utils.dart';
 import 'package:flutter/material.dart';
 
 class TabsPage extends StatefulWidget {
@@ -63,7 +63,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AppIconWidget(
-                  AppIconData.home,
+                  AppIconDataUtils.home,
                   size: 32,
                   color: _currentIndex == 0 ? AppColorsTheme.primaryColor : AppColorsTheme.greyColor,
                 ),
@@ -76,7 +76,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AppIconWidget(
-                  AppIconData.category,
+                  AppIconDataUtils.category,
                   size: 32,
                   color: _currentIndex == 1 ? AppColorsTheme.primaryColor : AppColorsTheme.greyColor,
                 ),
@@ -89,7 +89,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AppIconWidget(
-                  AppIconData.add,
+                  AppIconDataUtils.add,
                   size: 32,
                   color: _currentIndex == 2 ? AppColorsTheme.primaryColor : AppColorsTheme.greyColor,
                 ),
@@ -102,7 +102,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AppIconWidget(
-                  AppIconData.favorites,
+                  AppIconDataUtils.favorites,
                   size: 32,
                   color: _currentIndex == 3 ? AppColorsTheme.primaryColor : AppColorsTheme.greyColor,
                 ),
@@ -115,7 +115,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AppIconWidget(
-                  AppIconData.profile,
+                  AppIconDataUtils.profile,
                   size: 32,
                   color: _currentIndex == 4 ? AppColorsTheme.primaryColor : AppColorsTheme.greyColor,
                 ),

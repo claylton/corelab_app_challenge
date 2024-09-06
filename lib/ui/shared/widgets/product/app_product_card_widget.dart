@@ -1,7 +1,7 @@
 import 'package:corelab_app_challenge/model/product_model.dart';
 import 'package:corelab_app_challenge/ui/themes/app_colors_theme.dart';
 import 'package:corelab_app_challenge/ui/themes/app_text_style_theme.dart';
-import 'package:corelab_app_challenge/ui/utils/money_formatter_utils.dart';
+import 'package:corelab_app_challenge/ui/utils/formatters/money_formatter_utils.dart';
 import 'package:flutter/widgets.dart';
 
 class AppProductCardWidget extends StatelessWidget {
