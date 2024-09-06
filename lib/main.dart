@@ -1,4 +1,5 @@
 import 'package:corelab_app_challenge/blocs/home_bloc.dart';
+import 'package:corelab_app_challenge/blocs/search_bloc.dart';
 import 'package:corelab_app_challenge/ui/pages/tabs_page.dart';
 import 'package:corelab_app_challenge/ui/themes/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<HomeBloc>.value(value: HomeBloc()),
+        ChangeNotifierProvider<SearchBloc>.value(value: SearchBloc()),
       ],
       child: const Main(),
     );

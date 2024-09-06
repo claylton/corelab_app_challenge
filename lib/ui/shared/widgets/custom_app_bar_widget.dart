@@ -3,10 +3,16 @@ import 'package:corelab_app_challenge/ui/themes/app_text_style_theme.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
+  final VoidCallback? onSearchTap;
+  final Function(String)? onChanged;
+  final bool autoFocus;
 
 
   const CustomAppBarWidget({
     super.key,
+    this.onSearchTap, 
+    this.onChanged,
+    this.autoFocus = false,
   });
 
   @override
@@ -23,11 +29,15 @@ class CustomAppBarWidget extends StatelessWidget implements PreferredSizeWidget 
             color: AppColorsTheme.secondaryColor,
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
-          child: const TextField(
+          child: TextField(
+            autofocus: autoFocus,
+            canRequestFocus: autoFocus,
+            onTap: onSearchTap,
+            onChanged: onChanged,
             showCursor: true,
             cursorColor: AppColorsTheme.greyColor,
             style: AppTextStyleTheme.titleTextStyle,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: 'Buscar',
               hintStyle: TextStyle(fontFamily: 'DMSans-Medium', color: AppColorsTheme.greyColor),
               suffixIcon: Icon(Icons.search, color: AppColorsTheme.primaryColor, size: 24),

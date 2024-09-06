@@ -6,7 +6,7 @@ class ProductRepository {
 
   Future<List<ProductItemModel>> get getAll async {
     Map<String, dynamic> response = ProductsMock.json();
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
     return (response['data'] as List)
       .map((course) => ProductItemModel.fromJson(course))
       .toList();
