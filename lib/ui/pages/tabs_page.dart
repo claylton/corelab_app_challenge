@@ -33,7 +33,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
     _tabController.dispose();
     super.dispose();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,21 +42,37 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
         children: [
           const HomePage(),
           CategoryPage(),
-          Container(color: AppColorsTheme.primaryColor),
-          Container(color: Colors.amber),
-          Container(color: Colors.black),
         ],
       ),
       bottomNavigationBar: TabBar(
+        onTap: (index) {
+          if (index > 1) {
+            _tabController.index = _tabController.previousIndex;
+            _currentIndex = index;
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                backgroundColor: AppColorsTheme.primaryColor,
+                duration: const Duration(seconds: 1),
+                padding: const EdgeInsets.all(10),
+                  content: Text(
+                "Em breve :D",
+                textAlign: TextAlign.center,
+                style: AppTextStyleTheme.navBarMenuTitle.copyWith(color: AppColorsTheme.whiteColor, fontSize: 20, fontFamily: 'DMSans-Bold'),
+              )),
+            );
+          } else {
+            return;
+          }
+        },
         controller: _tabController,
         padding: const EdgeInsets.all(0),
         labelPadding: const EdgeInsets.all(0),
         labelStyle: AppTextStyleTheme.navBarMenuTitle,
-        labelColor: AppColorsTheme.primaryColor,
+        labelColor: _currentIndex > 1 ? AppColorsTheme.greyColor : AppColorsTheme.primaryColor,
         unselectedLabelColor: AppColorsTheme.greyColor,
         indicatorSize: TabBarIndicatorSize.label,
         indicatorPadding: const EdgeInsets.symmetric(vertical: 5),
-        indicatorColor: AppColorsTheme.primaryColor,
+        indicatorColor: _currentIndex > 1 ? AppColorsTheme.whiteColor : AppColorsTheme.primaryColor,
         tabs: [
           Tab(
             text: 'Home',
@@ -92,7 +108,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
                 AppIconWidget(
                   AppIconDataUtils.add,
                   size: 32,
-                  color: _currentIndex == 2 ? AppColorsTheme.primaryColor : AppColorsTheme.greyColor,
+                  color: AppColorsTheme.greyColor,
                 ),
               ],
             ),
@@ -105,7 +121,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
                 AppIconWidget(
                   AppIconDataUtils.favorites,
                   size: 32,
-                  color: _currentIndex == 3 ? AppColorsTheme.primaryColor : AppColorsTheme.greyColor,
+                  color: AppColorsTheme.greyColor,
                 ),
               ],
             ),
@@ -118,7 +134,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
                 AppIconWidget(
                   AppIconDataUtils.profile,
                   size: 32,
-                  color: _currentIndex == 4 ? AppColorsTheme.primaryColor : AppColorsTheme.greyColor,
+                  color: AppColorsTheme.greyColor,
                 ),
               ],
             ),
