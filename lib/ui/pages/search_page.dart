@@ -67,7 +67,6 @@ class _SearchPageState extends State<SearchPage> {
                 : '${bloc.searchResults?.length} resultados encontrados',
               style: const TextStyle(
                 fontFamily: 'DMSans-Medium',
-                // fontSize: 24,
                 color: AppColorsTheme.blackColor,
               ),
             ),

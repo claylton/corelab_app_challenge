@@ -1,5 +1,3 @@
-// import '../../../modules/dashboard/model/product_model.dart';
-
 abstract class ProductsMock {
   static Map<String, dynamic> json() {
     return {
@@ -62,7 +60,7 @@ abstract class ProductsMock {
           "price": 29.90,
           "parcelsInfo": "Em até 12x de R\$ 249,00",
           "productState": "NOVO",
-          "createdAt": DateTime.now().subtract(const Duration(days: 5)),
+          "createdAt": DateTime.now().subtract(const Duration(days: 3)),
         },
         {
           "category": "Descartáveis",
@@ -71,7 +69,56 @@ abstract class ProductsMock {
           "price": 29.90,
           "parcelsInfo": "Em até 12x de R\$ 249,00",
           "productState": "NOVO",
-          "createdAt": DateTime.now().subtract(const Duration(days: 6)),
+          "createdAt": DateTime.now().subtract(const Duration(days: 3)),
+        },
+        {
+          "category": "Anestésicos e Agulhas Gengival",
+          "imagePath": "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/conditioner.png",
+          "title": "Anestésico Lidoína 2% - AllPrime",
+          "price": 19.90,
+          "parcelsInfo": "Em até 12x de R\$ 1,66",
+          "productState": "NOVO",
+          "createdAt": DateTime.now().subtract(const Duration(days: 4)),
+        },
+        {
+          "category": "Biossegurança",
+          "imagePath": "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/conditioner.png",
+          "title": "Luvas de Exame Nitrílica - NTFlex",
+          "price": 9.99,
+          "oldPrice": 12.99,
+          "discount": 23,
+          "parcelsInfo": "Em até 12x de R\$ 0,83",
+          "productState": "NOVO",
+          "createdAt": DateTime.now().subtract(const Duration(days: 4)),
+        },
+        {
+          "category": "Endodontia",
+          "imagePath": "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/conditioner.png",
+          "title": "Instrumento de Endodontia Flexofile - AllPrime",
+          "price": 49.90,
+          "parcelsInfo": "Em até 12x de R\$ 4,16",
+          "productState": "NOVO",
+          "createdAt": DateTime.now().subtract(const Duration(days: 5)),
+        },
+        {
+          "category": "Ortodontia",
+          "imagePath": "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/mask.png",
+          "title": "Braquete Ortodôntico - NTFlex",
+          "price": 29.90,
+          "oldPrice": 39.90,
+          "discount": 25,
+          "parcelsInfo": "Em até 12x de R\$ 2,49",
+          "productState": "NOVO",
+          "createdAt": DateTime.now().subtract(const Duration(days: 5)),
+        },
+        {
+          "category": "Periféricos e Peças de Mão",
+          "imagePath": "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/mask.png",
+          "title": "Turina de Alta Velocidade - AllPrime",
+          "price": 99.90,
+          "parcelsInfo": "Em até 12x de R\$ 8,33",
+          "productState": "NOVO",
+          "createdAt": DateTime.now().subtract(const Duration(days: 5)),
         },
       ],
     };

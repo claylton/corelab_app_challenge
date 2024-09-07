@@ -40,7 +40,6 @@ class AppProductCardWidget extends StatelessWidget {
                           fit: BoxFit.fill,
                           image: NetworkImage(product.imagePath),
                         ),
-                        // color: Theme.of(context).primaryColor,
                         border: Border.all(width: 4.0, color: const Color(0xFFFFFFFF)),
                         borderRadius: BorderRadius.circular(200),
                       ),

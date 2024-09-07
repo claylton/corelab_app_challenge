@@ -9,4 +9,3 @@ abstract class AppColorsTheme {
   static const Color borderColor = Color(0xFFEBF1F4);
   static const Color deepGreyColor = Color(0xFF4A6569);
 }
-  // static const Color shadowColor = Color(0x2694A6A9);
