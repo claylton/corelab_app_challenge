@@ -16,6 +16,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBarWidget(
         autoFocus: false,
+        canRequestFocus: false,
         onSearchTap: () => Navigator.push(
           context,
           MaterialPageRoute(

@@ -7,6 +7,7 @@ class ProductItemModel {
   final String parcelsInfo;
   final String productState;
   final DateTime createdAt;
+  final String category;
 
   const ProductItemModel({
     required this.imagePath,
@@ -17,6 +18,7 @@ class ProductItemModel {
     required this.parcelsInfo,
     required this.productState,
     required this.createdAt,
+    required this.category,
   });
 
   factory ProductItemModel.fromJson(Map<String, dynamic> json) {
@@ -29,6 +31,7 @@ class ProductItemModel {
       parcelsInfo: json['parcelsInfo'],
       productState: json['productState'],
       createdAt: DateTime.parse(json['createdAt'].toString()),
+      category: json['category'],
     );
   }
 
@@ -42,6 +45,7 @@ class ProductItemModel {
       'parcelsInfo': parcelsInfo,
       'productState': productState,
       'createdAt': createdAt.toIso8601String(),
+      'category': category
     };
   }
 }

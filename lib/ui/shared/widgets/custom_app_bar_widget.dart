@@ -6,14 +6,19 @@ class CustomAppBarWidget extends StatelessWidget implements PreferredSizeWidget 
   final VoidCallback? onSearchTap;
   final Function(String)? onChanged;
   final bool autoFocus;
+  final bool canRequestFocus;
   final bool isCategoryAppBar;
+  final TextEditingController? textEditingController;
 
   const CustomAppBarWidget({
     super.key,
     this.onSearchTap,
     this.onChanged,
     this.autoFocus = false,
+    this.canRequestFocus = true,
     this.isCategoryAppBar = false,
+    this.textEditingController,
+
   });
 
   @override
@@ -33,9 +38,15 @@ class CustomAppBarWidget extends StatelessWidget implements PreferredSizeWidget 
                   borderRadius: BorderRadius.all(Radius.circular(8)),
                 ),
                 child: TextField(
+                  controller: textEditingController,
                   autofocus: autoFocus,
-                  canRequestFocus: autoFocus,
-                  onTap: onSearchTap,
+                  canRequestFocus: canRequestFocus,
+                  onTap: () {
+                    if (textEditingController != null) {
+                      textEditingController!.clear();
+                    }
+                    onSearchTap?.call();
+                  },
                   onChanged: onChanged,
                   showCursor: true,
                   cursorColor: AppColorsTheme.greyColor,

@@ -5,26 +5,59 @@ import 'package:corelab_app_challenge/ui/themes/app_colors_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
+class SearchPage extends StatefulWidget {
+  final String? category;
+  final TextEditingController? textEditingController;
+  final VoidCallback? onSearchTap;
+  final bool? autoFocus;
+
+  const SearchPage({
+    super.key,
+    this.category,
+    this.textEditingController,
+    this.onSearchTap,
+    this.autoFocus,
+  });
+
+  @override
+  State<SearchPage> createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> {
+  late SearchBloc bloc;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    bloc = Provider.of<SearchBloc>(context);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (widget.category != null) {
+        bloc.searchByCategory(widget.category!);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    final SearchBloc bloc = Provider.of<SearchBloc>(context);
-
     return Scaffold(
       appBar: CustomAppBarWidget(
         onChanged: (String value) => bloc.search(value),
-        autoFocus: true,
+        autoFocus: widget.autoFocus ?? true,
+        canRequestFocus: true,
+        textEditingController: widget.textEditingController,
+        onSearchTap: widget.onSearchTap,
       ),
       body: ListView(
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 20, top: 24),
             child: Text(
-              bloc.isLoading
-              ? 'Aguarde..'
-              : '${bloc.searchResults?.length} resultados encontrados',
+              bloc.isLoading ? 'Aguarde..' : '${bloc.searchResults?.length} resultados encontrados',
               style: const TextStyle(
                 fontFamily: 'DMSans-Medium',
                 // fontSize: 24,

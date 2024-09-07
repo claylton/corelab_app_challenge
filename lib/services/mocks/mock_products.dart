@@ -7,8 +7,8 @@ abstract class ProductsMock {
       'message': 'success',
       'data': [
         {
-          "imagePath":
-              "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/conditioner.png",
+          "category": "Dentística e Estética",
+          "imagePath": "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/conditioner.png",
           "title": "Condicionador Ácido Fosfórico 37% - AllPrime",
           "price": 29.90,
           "parcelsInfo": "Em até 12x de R\$ 249,00",
@@ -16,8 +16,8 @@ abstract class ProductsMock {
           "createdAt": DateTime.now()
         },
         {
-          "imagePath":
-              "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/conditioner.png",
+          "category": "Dentística e Estética",
+          "imagePath": "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/conditioner.png",
           "title": "Condicionador Ácido Fosfórico 37% - AllPrime",
           "price": 290.90,
           "oldPrice": 300.00,
@@ -27,8 +27,8 @@ abstract class ProductsMock {
           "createdAt": DateTime.now()
         },
         {
-          "imagePath":
-              "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/mask.png",
+          "category": "Descartáveis",
+          "imagePath": "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/mask.png",
           "title": "Máscaras Descartáveis Brancas - NTFlex",
           "price": 8.78,
           "oldPrice": 19.99,
@@ -38,8 +38,8 @@ abstract class ProductsMock {
           "createdAt": DateTime.now().subtract(const Duration(days: 1)),
         },
         {
-          "imagePath":
-              "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/conditioner.png",
+          "category": "Dentística e Estética",
+          "imagePath": "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/conditioner.png",
           "title": "Condicionador Ácido Fosfórico 37% - AllPrime",
           "price": 29.90,
           "parcelsInfo": "Em até 12x de R\$ 249,00",
@@ -47,8 +47,8 @@ abstract class ProductsMock {
           "createdAt": DateTime.now().subtract(const Duration(days: 1)),
         },
         {
-          "imagePath":
-              "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/mask.png",
+          "category": "Descartáveis",
+          "imagePath": "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/mask.png",
           "title": "Máscaras Descartáveis Brancas - NTFlex",
           "price": 29.90,
           "parcelsInfo": "Em até 12x de R\$ 249,00",
@@ -56,8 +56,8 @@ abstract class ProductsMock {
           "createdAt": DateTime.now().subtract(const Duration(days: 1)),
         },
         {
-          "imagePath":
-              "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/mask.png",
+          "category": "Descartáveis",
+          "imagePath": "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/mask.png",
           "title": "Máscaras Descartáveis Brancas - NTFlex",
           "price": 29.90,
           "parcelsInfo": "Em até 12x de R\$ 249,00",
@@ -65,8 +65,8 @@ abstract class ProductsMock {
           "createdAt": DateTime.now().subtract(const Duration(days: 5)),
         },
         {
-          "imagePath":
-              "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/mask.png",
+          "category": "Descartáveis",
+          "imagePath": "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/mask.png",
           "title": "Máscaras Descartáveis Brancas - NTFlex",
           "price": 29.90,
           "parcelsInfo": "Em até 12x de R\$ 249,00",

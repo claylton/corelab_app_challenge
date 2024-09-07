@@ -1,3 +1,4 @@
+import 'package:corelab_app_challenge/ui/pages/search_page.dart';
 import 'package:corelab_app_challenge/ui/shared/widgets/category/app_divider_widget.dart';
 import 'package:corelab_app_challenge/ui/shared/widgets/category/category_items_widgets.dart';
 import 'package:corelab_app_challenge/ui/shared/widgets/custom_app_bar_widget.dart';
@@ -5,6 +6,8 @@ import 'package:corelab_app_challenge/ui/themes/app_colors_theme.dart';
 import 'package:flutter/material.dart';
 
 class CategoryPage extends StatelessWidget {
+  final TextEditingController textEditingController = TextEditingController();
+
   CategoryPage({super.key});
 
   final List<String> categories = [
@@ -26,7 +29,7 @@ class CategoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: const CustomAppBarWidget(isCategoryAppBar: true),
+      appBar: const CustomAppBarWidget(isCategoryAppBar: true),
       body: ListView(
         children: [
           Container(
@@ -44,8 +47,19 @@ class CategoryPage extends StatelessWidget {
                 final item = categories[index];
                 return CategoryItemWidgets(
                   categoryName: item,
-                  // onTap: () => bloc.searchForCategory(item),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SearchPage(
+                          category: item,
+                          textEditingController: TextEditingController(text: 'categoria: $item'),
+                          onSearchTap: () => TextEditingController().selection ,
+                          autoFocus: false,
+                        ),
+                      ),
+                    );
+                  },
                 );
               },
               separatorBuilder: (context, index) => const Padding(
