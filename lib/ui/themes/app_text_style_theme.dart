@@ -51,4 +51,17 @@ abstract class AppTextStyleTheme {
     fontSize: 20,
     fontFamily: 'DMSans-Regular',
   );
+
+  static const TextStyle notFoundTitle = TextStyle(
+    fontFamily: 'DmSans-Bold',
+    fontSize: 18,
+    color: AppColorsTheme.blackColor,
+  );
+
+
+  static const TextStyle notFoundSubtitle = TextStyle(
+    fontFamily: 'DmSans-Regular',
+    fontSize: 14,
+    color: AppColorsTheme.deepGreyColor,
+  );
 }

@@ -7,10 +7,11 @@ import 'package:flutter/widgets.dart';
 
 class SearchBloc extends ChangeNotifier {
   final ProductRepository productRepository = ProductRepository();
+  final TextEditingController? word;
 
   List<ProductItemModel>? searchResults;
-  final TextEditingController? word;
   bool isLoading = false;
+  String? itemSearchName;
 
   SearchBloc({this.word}) {
     search(word?.text ?? '');
@@ -20,6 +21,7 @@ class SearchBloc extends ChangeNotifier {
     isLoading = true;
     notifyListeners();
 
+    itemSearchName = word;
     String wordFormatter = RegexFormatterUtils.removeAccents(word).toLowerCase();
 
     productRepository.getAll.then((data) {
@@ -39,6 +41,7 @@ class SearchBloc extends ChangeNotifier {
     isLoading = true;
     notifyListeners();
 
+    itemSearchName = word;
     String wordFormatter = RegexFormatterUtils.removeAccents(word).toLowerCase();
 
     try {
