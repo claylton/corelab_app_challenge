@@ -115,7 +115,7 @@ abstract class ProductsMock {
           "category": "Periféricos e Peças de Mão",
           "imagePath": "https://raw.githubusercontent.com/claylton/corelab_app_challenge/main/assets/images/mask.png",
           "title": "Turina de Alta Velocidade - AllPrime",
-          "price": 99.90,
+          "price": 15.90,
           "parcelsInfo": "Em até 12x de R\$ 8,33",
           "productState": "NOVO",
           "createdAt": DateTime.now().subtract(const Duration(days: 5)),

@@ -43,6 +43,9 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
         children: [
           const HomePage(),
           CategoryPage(),
+          const SizedBox(),
+          const SizedBox(),
+          const SizedBox(),
         ],
       ),
       bottomNavigationBar: TabBar(

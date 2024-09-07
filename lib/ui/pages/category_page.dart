@@ -54,9 +54,9 @@ class CategoryPage extends StatelessWidget {
                         builder: (context) => SearchPage(
                           category: item,
                           textEditingController: TextEditingController(text: 'categoria: $item'),
-                          onSearchTap: () => TextEditingController().selection ,
                           autoFocus: false,
                           showFilter: true,
+                          showHistory: false,
                         ),
                       ),
                     );

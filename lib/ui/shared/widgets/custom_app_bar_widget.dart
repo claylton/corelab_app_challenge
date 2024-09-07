@@ -1,7 +1,9 @@
+import 'package:corelab_app_challenge/blocs/search_bloc.dart';
 import 'package:corelab_app_challenge/ui/shared/widgets/app_snack_bar_widget.dart';
 import 'package:corelab_app_challenge/ui/themes/app_colors_theme.dart';
 import 'package:corelab_app_challenge/ui/themes/app_text_style_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CustomAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? onSearchTap;
@@ -24,6 +26,7 @@ class CustomAppBarWidget extends StatelessWidget implements PreferredSizeWidget 
 
   @override
   Widget build(BuildContext context) {
+    SearchBloc bloc = Provider.of<SearchBloc>(context);
     return AppBar(
         backgroundColor: isCategoryAppBar ? AppColorsTheme.secondaryColor : AppColorsTheme.primaryColor,
         elevation: 0,
@@ -48,6 +51,11 @@ class CustomAppBarWidget extends StatelessWidget implements PreferredSizeWidget 
                         borderRadius: BorderRadius.all(Radius.circular(8)),
                       ),
                       child: TextField(
+                        onTapOutside: (event) {
+                          FocusScope.of(context).unfocus();
+                          bloc.addItemHistory();
+                        },
+                        onSubmitted: (value) => bloc.addItemHistory(),
                         controller: textEditingController,
                         autofocus: autoFocus,
                         canRequestFocus: canRequestFocus,
@@ -61,11 +69,21 @@ class CustomAppBarWidget extends StatelessWidget implements PreferredSizeWidget 
                         showCursor: true,
                         cursorColor: AppColorsTheme.greyColor,
                         style: AppTextStyleTheme.titleTextStyle,
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                           hintText: 'Buscar',
-                          hintStyle: TextStyle(fontFamily: 'DMSans-Medium', color: AppColorsTheme.greyColor),
-                          suffixIcon: Icon(Icons.search, color: AppColorsTheme.primaryColor, size: 24),
-                          contentPadding: EdgeInsets.symmetric(vertical: 11, horizontal: 12),
+                          hintStyle: const TextStyle(fontFamily: 'DMSans-Medium', color: AppColorsTheme.greyColor),
+                          suffixIcon: InkWell(
+                            onTap: () {
+                              FocusScope.of(context).unfocus();
+                              bloc.addItemHistory();
+                            },
+                            child: const Icon(
+                              Icons.search,
+                              color: AppColorsTheme.primaryColor,
+                              size: 24,
+                            ),
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(vertical: 11, horizontal: 12),
                           border: InputBorder.none,
                         ),
                       ),

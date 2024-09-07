@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
         onSearchTap: () => Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const SearchPage(showFilter: true),
+            builder: (context) => SearchPage(showFilter: true, showHistory: true),
           ),
         ),
       ),
