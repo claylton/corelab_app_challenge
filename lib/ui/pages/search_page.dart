@@ -60,7 +60,11 @@ class _SearchPageState extends State<SearchPage> {
           Padding(
             padding: const EdgeInsets.only(left: 20, top: 24),
             child: Text(
-              bloc.isLoading ? 'Aguarde..' : '${bloc.searchResults?.length} resultados encontrados',
+              bloc.isLoading 
+              ? 'Aguarde..' 
+              : bloc.searchResults!.isEmpty
+                ? ''
+                : '${bloc.searchResults?.length} resultados encontrados',
               style: const TextStyle(
                 fontFamily: 'DMSans-Medium',
                 // fontSize: 24,
