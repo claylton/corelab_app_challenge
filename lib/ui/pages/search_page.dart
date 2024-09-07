@@ -10,6 +10,7 @@ class SearchPage extends StatefulWidget {
   final TextEditingController? textEditingController;
   final VoidCallback? onSearchTap;
   final bool? autoFocus;
+  final bool? showFilter;
 
   const SearchPage({
     super.key,
@@ -17,6 +18,7 @@ class SearchPage extends StatefulWidget {
     this.textEditingController,
     this.onSearchTap,
     this.autoFocus,
+    this.showFilter,
   });
 
   @override
@@ -51,6 +53,7 @@ class _SearchPageState extends State<SearchPage> {
         canRequestFocus: true,
         textEditingController: widget.textEditingController,
         onSearchTap: widget.onSearchTap,
+        showFilter: widget.showFilter ?? false,
       ),
       body: ListView(
         children: [

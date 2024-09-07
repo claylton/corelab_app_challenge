@@ -1,6 +1,7 @@
 import 'package:corelab_app_challenge/ui/pages/category_page.dart';
 import 'package:corelab_app_challenge/ui/pages/home_page.dart';
 import 'package:corelab_app_challenge/ui/shared/widgets/app_icon_widget.dart';
+import 'package:corelab_app_challenge/ui/shared/widgets/app_snack_bar_widget.dart';
 import 'package:corelab_app_challenge/ui/themes/app_colors_theme.dart';
 import 'package:corelab_app_challenge/ui/themes/app_text_style_theme.dart';
 import 'package:corelab_app_challenge/ui/utils/data/app_icon_data_utils.dart';
@@ -49,17 +50,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
           if (index > 1) {
             _tabController.index = _tabController.previousIndex;
             _currentIndex = index;
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                backgroundColor: AppColorsTheme.primaryColor,
-                duration: const Duration(seconds: 1),
-                padding: const EdgeInsets.all(10),
-                  content: Text(
-                "Em breve :D",
-                textAlign: TextAlign.center,
-                style: AppTextStyleTheme.navBarMenuTitle.copyWith(color: AppColorsTheme.whiteColor, fontSize: 20, fontFamily: 'DMSans-Bold'),
-              )),
-            );
+            AppSnackBarWidget.showSnackBar(context, "Em breve :D");
           } else {
             return;
           }
