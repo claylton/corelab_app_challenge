@@ -71,7 +71,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AppIconWidget(
-                  AppIconDataUtils.home,
+                  _currentIndex == 0 ? AppIconDataUtils.homeSelect : AppIconDataUtils.home,
                   size: 32,
                   color: _currentIndex == 0 ? AppColorsTheme.primaryColor : AppColorsTheme.greyColor,
                 ),
@@ -84,7 +84,7 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AppIconWidget(
-                  AppIconDataUtils.category,
+                  _currentIndex == 1 ? AppIconDataUtils.categorySelect : AppIconDataUtils.category,
                   size: 32,
                   color: _currentIndex == 1 ? AppColorsTheme.primaryColor : AppColorsTheme.greyColor,
                 ),
