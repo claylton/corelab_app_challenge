@@ -1,10 +1,12 @@
 import 'package:corelab_app_challenge/blocs/search_bloc.dart';
+import 'package:corelab_app_challenge/ui/pages/tabs_page.dart';
 import 'package:corelab_app_challenge/ui/shared/widgets/app_snack_bar_widget.dart';
 import 'package:corelab_app_challenge/ui/themes/app_colors_theme.dart';
 import 'package:corelab_app_challenge/ui/themes/app_text_style_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class CustomAppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? onSearchTap;
   final Function(String)? onChanged;
@@ -32,6 +34,17 @@ class CustomAppBarWidget extends StatelessWidget implements PreferredSizeWidget 
         elevation: 0,
         surfaceTintColor: Colors.transparent,
         foregroundColor: AppColorsTheme.whiteColor,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const TabsPage(),
+              ),
+            );
+          },
+        ),
         title: isCategoryAppBar
             ? Text(
                 'Categorias',

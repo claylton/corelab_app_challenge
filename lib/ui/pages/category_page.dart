@@ -29,7 +29,7 @@ class CategoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBarWidget(isCategoryAppBar: true),
+      appBar: CustomAppBarWidget(isCategoryAppBar: true),
       body: ListView(
         children: [
           Container(

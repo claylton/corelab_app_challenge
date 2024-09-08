@@ -63,8 +63,11 @@ class SearchBloc extends ChangeNotifier {
   }
 
   void addItemHistory() {
-    if (itemSearchName?.isNotEmpty ?? false) {
-      searchHistoryIemList.add(itemSearchName ?? '');
+    if ((itemSearchName?.isNotEmpty ?? false)) {
+      if (searchHistoryIemList.contains(itemSearchName)) {
+        searchHistoryIemList.remove(itemSearchName);
+      }
+      searchHistoryIemList.insert(0, itemSearchName ?? '');
       saveHistory();
     }
   }
